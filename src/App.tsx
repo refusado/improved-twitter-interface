@@ -74,7 +74,6 @@ function App() {
       <footer>
         <button>
           <span><img src="/" alt="Tweet" /></span>
-          <p>Tweet</p>
         </button>
 
         <nav>
@@ -85,9 +84,215 @@ function App() {
         </nav>
       </footer>
 
-      <main>
+      {/* desktop
+      <menu>
         <div>
-          {/* <h2>Home</h2> */}
+          <span>X</span>
+        </div>
+        <nav>
+          <a href="/">
+            <span><img src="/" alt="Home" /></span>
+            <span>Home</span>
+          </a>
+          <a href="/">
+            <span><img src="/" alt="Explore" /></span>
+            <span>Explore</span>
+          </a>
+          <a href="/">
+            <span><img src="/" alt="Notifications" /></span>
+            <span>Notifications</span>
+          </a>
+        </nav>
+        <div>
+          <button>Tweet</button>
+        </div>
+        
+        <div>
+          <label>
+            <input type="checkbox" />
+            <div>
+              <img src="/" alt="Avatar" />
+            </div>
+            <div>
+              <p>Name Here</p>
+              <p>@username13here</p>
+            </div>
+            <div>
+              ...
+            </div>
+          </label>
+        </div>
+      </menu>
+      */}
+
+      <main>
+        {/* desktop
+        <aside>
+          <div>
+            <div>
+              <img src="/" alt="Search" />
+            </div>
+            <div>
+              <input type="text" placeholder="Search Twitter" />
+            </div>
+          </div>
+
+          <section>
+            <h2>Get Verified</h2>
+            <p>Subscribe to unlock new features.</p>
+            <div>
+              <button>Get verified</button>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h2>What's happening</h2>
+            </div>
+            <div>
+              <a href="/">
+                <div>
+                  <p><span>Sports</span> <span>Trending</span></p>
+                  <h3>BREAKING UPDATE</h3>
+                  <div>
+                    <span>14.5K</span> Tweets
+                  </div>
+                </div>
+                <div>
+                  <span>...</span>
+                </div>
+              </a>
+              <a href="/">
+                <div>
+                  <p><span>Sports</span> <span>Trending</span></p>
+                  <h3>BREAKING UPDATE</h3>
+                  <div>
+                    <span>14.5K</span> Tweets
+                  </div>
+                </div>
+                <div>
+                  <span>...</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="/">
+                <span>Show more</span>
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h2>Who to follow</h2>
+            </div>
+            <div>
+              <a href="/">
+                <div><img src="/" alt="Avatar" /></div>
+                <div>
+                  <p>Name Here</p>
+                  <p>@username14here</p>
+                </div>
+                <div>
+                  <button>Follow</button>
+                </div>
+              </a>
+              <a href="/">
+                <div><img src="/" alt="Avatar" /></div>
+                <div>
+                  <p>Name Here</p>
+                  <p>@username14here</p>
+                </div>
+                <div>
+                  <button>Follow</button>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="/">
+                <span>Show more</span>
+              </a>
+            </div>
+          </section>
+          
+          <div>
+            <a href="/">Terms of Service</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Cokkie Policy</a>
+            <a href="/">Accessibility</a>
+            <a href="/">Ads info</a>
+            <label>
+              <input type="checkbox"/>
+              More <span>...</span>
+            </label>
+            <p>&copy; 2023 X Corp.</p>
+          </div>
+        </aside>
+        
+        <aside>
+          <button>
+            <div>
+              <span>Messages</span>
+            </div>
+            <div>
+              <img src="/" alt="New message" />
+            </div>
+            <div>
+              <button>
+                <img src="/" alt="Collapse" />
+              </button>
+            </div>
+          </button>
+          <div>
+            <ul>
+              <li>
+                <button>
+                  <div>
+                    <img src="/" alt="Avatar" />
+                  </div>
+                  <div>
+                    <p>
+                      <span><strong>Name Here</strong></span>
+                      <span>Y</span>
+                      <span>@username14here</span>
+                      <span>Jun 13</span>
+
+                      <span>
+                        <button>...</button>
+                      </span>
+                    </p>
+                  </div>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <div>
+                    <img src="/" alt="Avatar" />
+                  </div>
+                  <div>
+                    <p>
+                      <span><strong>Name Here</strong></span>
+                      <span>Y</span>
+                      <span>@username14here</span>
+                      <span>Jun 13</span>
+
+                      <span>
+                        <button>...</button>
+                      </span>
+                    </p>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        */}
+
+
+        <div>
+          {/* desktop
+          <h2>Home</h2>
+          */}
           <div>
             <a href="/">
               <p>For you</p>
@@ -97,7 +302,8 @@ function App() {
             </a>
           </div>
         </div>
-        {/* <div>
+        {/* desktop
+        <div>
           <img src="/" alt="Profile picture" />
           <div>
             <textarea name="What is happening?" />
@@ -108,7 +314,8 @@ function App() {
               <button>Tweet</button>
             </div>
           </div>
-        </div> */}
+        </div>
+        */}
         <button><p>Show 150 Tweets</p></button>
         <article>
           <img src="/" alt="Avatar" />
