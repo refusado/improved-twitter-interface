@@ -1,21 +1,27 @@
+import X from './assets/X.svg';
+
+console.log(X);
+
 function App() {
   return (
-    <div>
+    <div className="container mx-auto border border-red-500">
       <header>
-        <div>
-          <div>
-            <button><img src="/" alt="Avatar" /></button>
+        <div className="flex items-center px-4 py-3 h-14">
+          <div className="flex-grow w-0 h-full">
+            <button className="h-full">
+              <img className="h-full rounded-full"
+               src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
+            </button>
           </div>
-          <div id="logo">
-            <h1>X</h1>
+          <div className="flex items-center justify-center h-full">
+            <img className="h-4/5" src={X} alt="Logo" />
           </div>
-          <div>
-
+          <div className="flex-grow">
           </div>
         </div>
       </header>
 
-      <menu>
+      <menu className="hidden">
         <div>
           <p>Account info</p>
           <button>x</button>
@@ -71,16 +77,16 @@ function App() {
         </div>
       </menu>
 
-      <footer>
-        <button>
+      <footer className="fixed bottom-0 w-screen">
+        <button className="block mt-0 mb-4 ml-auto mr-5 bg-green-300 rounded-full w-14 h-14 ml-5uto">
           <span><img src="/" alt="Tweet" /></span>
         </button>
 
-        <nav>
-          <a href="/"><span><img src="/" alt="Home" />x</span></a>
-          <a href="/"><span><img src="Search" alt="Search" />x</span></a>
-          <a href="/"><span><img src="/" alt="Notifications" />x</span></a>
-          <a href="/"><span><img src="/" alt="Messages" />x</span></a>
+        <nav className="flex bg-green-300">
+          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
+          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
+          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
+          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
         </nav>
       </footer>
 
