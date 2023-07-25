@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import X from './assets/X.svg';
 
-console.log(X);
-
 function App() {
+  const [activeFeed, setActiveFeed]: [Boolean, Function] = useState(false);
+  
   return (
-    <div className="container mx-auto border border-red-500">
+    <div>
       <header>
         <div className="flex items-center px-4 py-3 h-14">
           <div className="flex-grow w-0 h-full">
@@ -78,11 +79,11 @@ function App() {
       </menu>
 
       <footer className="fixed bottom-0 w-screen">
-        <button className="block mt-0 mb-4 ml-auto mr-5 bg-green-300 rounded-full w-14 h-14 ml-5uto">
+        <button className="block mt-0 mb-4 ml-auto mr-5 text-white bg-indigo-600 rounded-full w-14 h-14">
           <span><img src="/" alt="Tweet" /></span>
         </button>
 
-        <nav className="flex bg-green-300">
+        <nav className="flex border-t-2 shadow shadow-black/30 border-black/5">
           <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
           <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
           <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
@@ -299,13 +300,21 @@ function App() {
           {/* desktop
           <h2>Home</h2>
           */}
-          <div>
-            <a href="/">
-              <p>For you</p>
-            </a>
-            <a href="/">
-              <p>Folowwing</p>
-            </a>
+          <div className="flex justify-between text-sm border-b-2 border-black/5">
+            <button className="flex justify-center w-0 grow hover:bg-white" onClick={() => setActiveFeed(false)}>
+              <div className="flex flex-col items-center">
+                <div className="h-1"></div>
+                <p className={`py-2.5 ${activeFeed ? 'text-black/70' : 'font-bold'}`}>For you</p>
+                <div className={`h-1 w-[106%] bg-indigo-600 rounded-full ${activeFeed ? 'invisible' : ''}`}></div>
+              </div>
+            </button>
+            <button className="flex justify-center w-0 grow hover:bg-white" onClick={() => setActiveFeed(true)}>
+              <div className="flex flex-col items-center">
+                <div className="h-1"></div>
+                <p className={`py-2.5 ${activeFeed ? 'font-bold' : 'text-black/70'}`}>Following</p>
+                <div className={`h-1 w-[106%] bg-indigo-600 rounded-full ${activeFeed ? '' : 'invisible'}`}></div>
+              </div>
+            </button>
           </div>
         </div>
         {/* desktop
@@ -322,7 +331,9 @@ function App() {
           </div>
         </div>
         */}
-        <button><p>Show 150 Tweets</p></button>
+        <button className="w-screen py-4 text-sm text-indigo-600 border-b-2 border-black/5">
+          <p>Show 150 Tweets</p>
+        </button>
         <article>
           <img src="/" alt="Avatar" />
           <div>
