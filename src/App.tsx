@@ -7,17 +7,21 @@ function App() {
   return (
     <div>
       <header>
-        <div className="flex items-center px-4 py-3 h-14">
-          <div className="flex-grow w-0 h-full">
-            <button className="h-full">
-              <img className="h-full rounded-full"
-               src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
-            </button>
-          </div>
-          <div className="flex items-center justify-center h-full">
-            <img className="h-4/5" src={X} alt="Logo" />
-          </div>
-          <div className="flex-grow">
+        <div className="px-4 py-[0.70rem]">
+          <div className="flex items-center h-8">
+
+            <div className="w-0 h-full grow">
+              <button className="h-full">
+                <img className="h-full rounded-full"
+                src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
+              </button>
+            </div>
+            <div className="flex items-center justify-center h-full">
+              <img className="h-full" src={X} alt="Logo" />
+            </div>
+            <div className="inline-block h-full grow">
+            </div>
+            
           </div>
         </div>
       </header>
@@ -79,15 +83,25 @@ function App() {
       </menu>
 
       <footer className="fixed bottom-0 w-screen">
-        <button className="block mt-0 mb-4 ml-auto mr-5 text-white bg-indigo-600 rounded-full w-14 h-14">
-          <span><img src="/" alt="Tweet" /></span>
+        <button className="block mt-0 mb-5 ml-auto mr-5 group">
+          <span className="flex items-center justify-center text-white duration-300 rounded-full shadow-md bg-violet-600 w-14 h-14 shadow-black/20 group-hover:bg-violet-700">
+            <img src="/" alt="Tweet" />
+          </span>
         </button>
 
-        <nav className="flex border-t-2 shadow shadow-black/30 border-black/5">
-          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
-          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
-          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
-          <a className="flex items-center justify-center h-14 grow" href="/"><span><img src="/" alt="X" /></span></a>
+        <nav className="flex border-t-2 shadow shadow-black/30 border-neutral-100">
+          <a className="flex items-center justify-center h-14 grow group" href="/">
+            <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          </a>
+          <a className="flex items-center justify-center h-14 grow group" href="/">
+            <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          </a>
+          <a className="flex items-center justify-center h-14 grow group" href="/">
+            <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          </a>
+          <a className="flex items-center justify-center h-14 grow group" href="/">
+            <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          </a>
         </nav>
       </footer>
 
@@ -300,19 +314,19 @@ function App() {
           {/* desktop
           <h2>Home</h2>
           */}
-          <div className="flex justify-between text-sm border-b-2 border-black/5">
-            <button className="flex justify-center w-0 grow hover:bg-white" onClick={() => setActiveFeed(false)}>
+          <div className="flex justify-between text-sm border-b-2 border-neutral-100">
+            <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-200/90" onClick={() => setActiveFeed(false)}>
               <div className="flex flex-col items-center">
                 <div className="h-1"></div>
                 <p className={`py-2.5 ${activeFeed ? 'text-black/70' : 'font-bold'}`}>For you</p>
-                <div className={`h-1 w-[106%] bg-indigo-600 rounded-full ${activeFeed ? 'invisible' : ''}`}></div>
+                <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? 'invisible' : ''}`}></div>
               </div>
             </button>
-            <button className="flex justify-center w-0 grow hover:bg-white" onClick={() => setActiveFeed(true)}>
+            <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-200/90" onClick={() => setActiveFeed(true)}>
               <div className="flex flex-col items-center">
                 <div className="h-1"></div>
                 <p className={`py-2.5 ${activeFeed ? 'font-bold' : 'text-black/70'}`}>Following</p>
-                <div className={`h-1 w-[106%] bg-indigo-600 rounded-full ${activeFeed ? '' : 'invisible'}`}></div>
+                <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? '' : 'invisible'}`}></div>
               </div>
             </button>
           </div>
@@ -331,7 +345,7 @@ function App() {
           </div>
         </div>
         */}
-        <button className="w-screen py-4 text-sm text-indigo-600 border-b-2 border-black/5">
+        <button className="w-screen py-4 text-sm duration-300 border-b-2 text-violet-600 border-neutral-100 hover:bg-neutral-100">
           <p>Show 150 Tweets</p>
         </button>
         <article>
