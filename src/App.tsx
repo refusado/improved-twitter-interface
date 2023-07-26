@@ -3,6 +3,15 @@ import X from './assets/X.svg';
 
 function App() {
   const [activeFeed, setActiveFeed]: [Boolean, Function] = useState(false);
+  const [isManuOpen, setIsMenuOpen]: [Boolean, Function] = useState(false);
+  const [closingMenu, setClosingMenu]: [Boolean, Function] = useState(true);
+
+  const toggleMenu = () => {
+    setClosingMenu(!closingMenu);
+    setTimeout(() => {
+      setIsMenuOpen(!isManuOpen);
+    }, isManuOpen ? 310 : 0);
+  }
   
   return (
     <div>
@@ -10,7 +19,7 @@ function App() {
         <div className="px-4 py-[0.68rem]">
           <div className="flex items-center h-8">
             <div className="w-0 h-full grow">
-              <button className="h-full">
+              <button className="h-full" onClick={toggleMenu}>
                 <img className="h-full rounded-full" src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
               </button>
             </div>
@@ -23,61 +32,65 @@ function App() {
         </div>
       </header>
 
-      <menu className="hidden">
-        <div>
-          <p>Account info</p>
-          <button>x</button>
-        </div>
-        <div>
+      {isManuOpen && (
+      <div className={`fixed top-0 right-0 left-0 bottom-0 z-50 ${closingMenu ? 'animate-menu-out' : 'animate-menu-in'}`}>
+        <menu className={`bg-white h-screen w-3/4 max-w-xs min-w-min ${closingMenu ? 'animate-to-left' : 'animate-to-right'}`}>
           <div>
-            <span><img src="/" alt="Avatar" /></span>
-            <button>+</button>
+            <p>Account info</p>
+            <button onClick={toggleMenu}>x</button>
           </div>
           <div>
-            <p>Name Here</p>
-            <p>@username13here</p>
+            <div>
+              <span><img src="/" alt="Avatar" /></span>
+              <button>+</button>
+            </div>
+            <div>
+              <p>Name Here</p>
+              <p>@username13here</p>
+            </div>
+            <div>
+              <p>
+                <span><strong>60</strong> Following</span>
+                <span><strong>7</strong> Followers</span>
+              </p>
+            </div>
           </div>
-          <div>
-            <p>
-              <span><strong>60</strong> Following</span>
-              <span><strong>7</strong> Followers</span>
-            </p>
-          </div>
-        </div>
 
-        <nav>
-          <a href="/">
-            <span><img src="/" alt="Profile" /></span>
-            <p>Profile</p>
-          </a>
-          <a href="/">
-            <span><img src="/" alt="Twitter Blue" /></span>
-            <p>Twitter Blue</p>
-          </a>
-          <a href="/">
-            <span><img src="/" alt="Lists" /></span>
-            <p>Lists</p>
-          </a>
-        </nav>
+          <nav>
+            <a href="/">
+              <span><img src="/" alt="Profile" /></span>
+              <p>Profile</p>
+            </a>
+            <a href="/">
+              <span><img src="/" alt="Twitter Blue" /></span>
+              <p>Twitter Blue</p>
+            </a>
+            <a href="/">
+              <span><img src="/" alt="Lists" /></span>
+              <p>Lists</p>
+            </a>
+          </nav>
 
-        <div>
-          <label>
-            <input type="checkbox" />
-            <span>Creator Studio</span>
-            <span>v</span>
-          </label>
-          <label>
-            <input type="checkbox" />
-            <span>Professional Tools</span>
-            <span>v</span>
-          </label>
-          <label>
-            <input type="checkbox" />
-            <span>Settings and Support</span>
-            <span>v</span>
-          </label>
-        </div>
-      </menu>
+          <div>
+            <label>
+              <input type="checkbox" />
+              <span>Creator Studio</span>
+              <span>v</span>
+            </label>
+            <label>
+              <input type="checkbox" />
+              <span>Professional Tools</span>
+              <span>v</span>
+            </label>
+            <label>
+              <input type="checkbox" />
+              <span>Settings and Support</span>
+              <span>v</span>
+            </label>
+          </div>
+        </menu>
+      </div>
+      )}
 
       <button className="fixed right-0 z-30 block mb-5 mr-5 bottom-14 group">
         <span className="flex items-center justify-center text-white duration-300 border rounded-full shadow-md bg-violet-500 border-violet-600 w-14 h-14 shadow-neutral-600/30 group-hover:bg-violet-700">
