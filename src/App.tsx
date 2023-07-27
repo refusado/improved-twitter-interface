@@ -4,13 +4,13 @@ import X from './assets/X.svg';
 function App() {
   const [activeFeed, setActiveFeed]: [Boolean, Function] = useState(false);
   const [isManuOpen, setIsMenuOpen]: [Boolean, Function] = useState(false);
-  const [closingMenu, setClosingMenu]: [Boolean, Function] = useState(true);
+  const [closingMenu, setClosingMenu]: [Boolean, Function] = useState(!isManuOpen);
 
   const toggleMenu = () => {
     setClosingMenu(!closingMenu);
     setTimeout(() => {
       setIsMenuOpen(!isManuOpen);
-    }, isManuOpen ? 310 : 0);
+    }, isManuOpen ? 210 : 0);
   }
   
   return (
@@ -33,63 +33,64 @@ function App() {
       </header>
 
       {isManuOpen && (
-      <div className={`fixed top-0 right-0 left-0 bottom-0 z-50 ${closingMenu ? 'animate-menu-out' : 'animate-menu-in'}`}>
-        <menu className={`bg-white h-screen w-3/4 max-w-xs min-w-min ${closingMenu ? 'animate-to-left' : 'animate-to-right'}`}>
-          <div>
-            <p>Account info</p>
-            <button onClick={toggleMenu}>x</button>
-          </div>
-          <div>
+        <div className={`fixed top-0 right-0 left-0 bottom-0 z-50 ${closingMenu ? 'animate-menu-out' : 'animate-menu-in'}`}>
+          <div onClick={toggleMenu} className="absolute w-screen h-screen"></div>
+          <menu className={`bg-white h-screen w-[280px] max-w-full ${closingMenu ? 'animate-to-left' : 'animate-to-right'}`}>
             <div>
-              <span><img src="/" alt="Avatar" /></span>
-              <button>+</button>
+              <p>Account info</p>
+              <button onClick={toggleMenu}>x</button>
             </div>
             <div>
-              <p>Name Here</p>
-              <p>@username13here</p>
+              <div>
+                <span><img src="/" alt="Avatar" /></span>
+                <button>+</button>
+              </div>
+              <div>
+                <p>Name Here</p>
+                <p>@username13here</p>
+              </div>
+              <div>
+                <p>
+                  <span><strong>60</strong> Following</span>
+                  <span><strong>7</strong> Followers</span>
+                </p>
+              </div>
             </div>
-            <div>
-              <p>
-                <span><strong>60</strong> Following</span>
-                <span><strong>7</strong> Followers</span>
-              </p>
-            </div>
-          </div>
 
-          <nav>
-            <a href="/">
-              <span><img src="/" alt="Profile" /></span>
-              <p>Profile</p>
-            </a>
-            <a href="/">
-              <span><img src="/" alt="Twitter Blue" /></span>
-              <p>Twitter Blue</p>
-            </a>
-            <a href="/">
-              <span><img src="/" alt="Lists" /></span>
-              <p>Lists</p>
-            </a>
-          </nav>
+            <nav>
+              <a href="/">
+                <span><img src="/" alt="Profile" /></span>
+                <p>Profile</p>
+              </a>
+              <a href="/">
+                <span><img src="/" alt="Twitter Blue" /></span>
+                <p>Twitter Blue</p>
+              </a>
+              <a href="/">
+                <span><img src="/" alt="Lists" /></span>
+                <p>Lists</p>
+              </a>
+            </nav>
 
-          <div>
-            <label>
-              <input type="checkbox" />
-              <span>Creator Studio</span>
-              <span>v</span>
-            </label>
-            <label>
-              <input type="checkbox" />
-              <span>Professional Tools</span>
-              <span>v</span>
-            </label>
-            <label>
-              <input type="checkbox" />
-              <span>Settings and Support</span>
-              <span>v</span>
-            </label>
-          </div>
-        </menu>
-      </div>
+            <div>
+              <label>
+                <input type="checkbox" />
+                <span>Creator Studio</span>
+                <span>v</span>
+              </label>
+              <label>
+                <input type="checkbox" />
+                <span>Professional Tools</span>
+                <span>v</span>
+              </label>
+              <label>
+                <input type="checkbox" />
+                <span>Settings and Support</span>
+                <span>v</span>
+              </label>
+            </div>
+          </menu>
+        </div>
       )}
 
       <button className="fixed right-0 z-30 block mb-5 mr-5 bottom-14 group">

@@ -8,9 +8,9 @@ export default {
     extend: {
       animation: {
         'to-right': 'to-right 300ms ease forwards',
-        'to-left': 'to-left 300ms ease-in-out forwards',
+        'to-left': 'to-left 200ms ease-in-out forwards',
         'menu-in': 'menu-in 300ms ease forwards',
-        'menu-out': 'menu-out 300ms ease forwards'
+        'menu-out': 'menu-out 200ms ease forwards'
       },
       keyframes: {
         'to-right': {
