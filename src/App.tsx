@@ -36,28 +36,34 @@ function App() {
         <div className={`fixed top-0 right-0 left-0 bottom-0 z-50 ${closingMenu ? 'animate-menu-out' : 'animate-menu-in'}`}>
           <div onClick={toggleMenu} className="absolute w-screen h-screen"></div>
           <menu className={`bg-white h-screen w-[280px] max-w-full ${closingMenu ? 'animate-to-left' : 'animate-to-right'}`}>
-            <div>
-              <p>Account info</p>
-              <button onClick={toggleMenu}>x</button>
+            <div className="flex items-center justify-between px-4 py-2">
+              <p><strong>Account info</strong></p>
+              <button onClick={toggleMenu} className="flex items-center justify-center w-8 h-8 text-2xl">
+                ×
+              </button>
             </div>
-            <div>
-              <div>
-                <span><img src="/" alt="Avatar" /></span>
-                <button>+</button>
+            <div className="px-4 py-3 bg-blue-500a">
+              <div className="flex">
+                <button className="flex items-center justify-center overflow-hidden bg-red-500 rounded-full w-11 aspect-square">
+                  <img src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
+                </button>
+                <button className="flex items-center justify-center ml-auto text-xl duration-200 bg-white border rounded-full hover:brightness-95 border-neutral-200 w-9 h-9">
+                  +
+                </button>
               </div>
+              <a href="/" className="inline-block my-3 text-[0.969rem]">
+                <p className="text-neutral-800"><strong>Refu</strong></p>
+                <p className="text-neutral-500">@refusado</p>
+              </a>
               <div>
-                <p>Name Here</p>
-                <p>@username13here</p>
-              </div>
-              <div>
-                <p>
-                  <span><strong>60</strong> Following</span>
-                  <span><strong>7</strong> Followers</span>
+                <p className="flex items-center gap-4 text-sm text-neutral-500">
+                  <span><strong className="text-neutral-800">60</strong> Following</span>
+                  <span><strong className="text-neutral-800">7</strong> Followers</span>
                 </p>
               </div>
             </div>
 
-            <nav>
+            <nav className="bg-amber-500">
               <a href="/">
                 <span><img src="/" alt="Profile" /></span>
                 <p>Profile</p>
@@ -72,7 +78,7 @@ function App() {
               </a>
             </nav>
 
-            <div>
+            <div className="bg-green-500">
               <label>
                 <input type="checkbox" />
                 <span>Creator Studio</span>
@@ -319,7 +325,7 @@ function App() {
         */}
 
 
-        <div className="sticky top-0 z-20 bg-white/50 backdrop-blur-lg">
+        <div className="sticky top-0 z-20 bg-white/50 backdrop-blur-md">
           {/* desktop
           <h2>Home</h2>
           */}
