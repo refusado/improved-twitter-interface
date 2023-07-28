@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import X from './assets/X.svg';
+import { Timeline } from './components/timeline/Timeline';
 
 function App() {
-  const [activeFeed, setActiveFeed]: [Boolean, Function] = useState(false);
   const [isManuOpen, setIsMenuOpen]: [Boolean, Function] = useState(false);
   const [closingMenu, setClosingMenu]: [Boolean, Function] = useState(!isManuOpen);
 
@@ -68,37 +68,37 @@ function App() {
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Profile" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Profile</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Profile</strong></p>
               </a>
               <a href="/" className="flex items-center gap-6 px-4 py-3 duration-200 bg-white hover:bg-neutral-400/10">
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Thitter Blue" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Thitter Blue</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Thitter Blue</strong></p>
               </a>
               <a href="/" className="flex items-center gap-6 px-4 py-3 duration-200 bg-white hover:bg-neutral-400/10">
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Lists" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Lists</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Lists</strong></p>
               </a>
               <a href="/" className="flex items-center gap-6 px-4 py-3 duration-200 bg-white hover:bg-neutral-400/10">
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Bookmarks" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Bookmarks</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Bookmarks</strong></p>
               </a>
               <a href="/" className="flex items-center gap-6 px-4 py-3 duration-200 bg-white hover:bg-neutral-400/10">
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Communities" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Communities</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Communities</strong></p>
               </a>
               <a href="/" className="flex items-center gap-6 px-4 py-3 duration-200 bg-white hover:bg-neutral-400/10">
                 <span className="w-8 h-8 overflow-hidden">
                   <img src="/" alt="Monetization" />
                 </span>
-                <p className="text-lg tracking-wide"><strong>Monetization</strong></p>
+                <p className="overflow-hidden text-lg tracking-wide text-ellipsis"><strong>Monetization</strong></p>
               </a>
             </nav>
 
@@ -271,397 +271,7 @@ function App() {
       </menu>
       */}
 
-      <main>
-        {/* desktop
-        <aside>
-          <div>
-            <div>
-              <img src="/" alt="Search" />
-            </div>
-            <div>
-              <input type="text" placeholder="Search Twitter" />
-            </div>
-          </div>
-
-          <section>
-            <h2>Get Verified</h2>
-            <p>Subscribe to unlock new features.</p>
-            <div>
-              <button>Get verified</button>
-            </div>
-          </section>
-
-          <section>
-            <div>
-              <h2>What's happening</h2>
-            </div>
-            <div>
-              <a href="/">
-                <div>
-                  <p><span>Sports</span> <span>Trending</span></p>
-                  <h3>BREAKING UPDATE</h3>
-                  <div>
-                    <span>14.5K</span> Tweets
-                  </div>
-                </div>
-                <div>
-                  <span>...</span>
-                </div>
-              </a>
-              <a href="/">
-                <div>
-                  <p><span>Sports</span> <span>Trending</span></p>
-                  <h3>BREAKING UPDATE</h3>
-                  <div>
-                    <span>14.5K</span> Tweets
-                  </div>
-                </div>
-                <div>
-                  <span>...</span>
-                </div>
-              </a>
-            </div>
-            <div>
-              <a href="/">
-                <span>Show more</span>
-              </a>
-            </div>
-          </section>
-
-          <section>
-            <div>
-              <h2>Who to follow</h2>
-            </div>
-            <div>
-              <a href="/">
-                <div><img src="/" alt="Avatar" /></div>
-                <div>
-                  <p>Name Here</p>
-                  <p>@username14here</p>
-                </div>
-                <div>
-                  <button>Follow</button>
-                </div>
-              </a>
-              <a href="/">
-                <div><img src="/" alt="Avatar" /></div>
-                <div>
-                  <p>Name Here</p>
-                  <p>@username14here</p>
-                </div>
-                <div>
-                  <button>Follow</button>
-                </div>
-              </a>
-            </div>
-            <div>
-              <a href="/">
-                <span>Show more</span>
-              </a>
-            </div>
-          </section>
-          
-          <div>
-            <a href="/">Terms of Service</a>
-            <a href="/">Privacy Policy</a>
-            <a href="/">Cokkie Policy</a>
-            <a href="/">Accessibility</a>
-            <a href="/">Ads info</a>
-            <label>
-              <input type="checkbox"/>
-              More <span>...</span>
-            </label>
-            <p>&copy; 2023 X Corp.</p>
-          </div>
-        </aside>
-        
-        <aside>
-          <button>
-            <div>
-              <span>Messages</span>
-            </div>
-            <div>
-              <img src="/" alt="New message" />
-            </div>
-            <div>
-              <button>
-                <img src="/" alt="Collapse" />
-              </button>
-            </div>
-          </button>
-          <div>
-            <ul>
-              <li>
-                <button>
-                  <div>
-                    <img src="/" alt="Avatar" />
-                  </div>
-                  <div>
-                    <p>
-                      <span><strong>Name Here</strong></span>
-                      <span>Y</span>
-                      <span>@username14here</span>
-                      <span>Jun 13</span>
-
-                      <span>
-                        <button>...</button>
-                      </span>
-                    </p>
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <div>
-                    <img src="/" alt="Avatar" />
-                  </div>
-                  <div>
-                    <p>
-                      <span><strong>Name Here</strong></span>
-                      <span>Y</span>
-                      <span>@username14here</span>
-                      <span>Jun 13</span>
-
-                      <span>
-                        <button>...</button>
-                      </span>
-                    </p>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </aside>
-        */}
-
-
-        <div className="sticky top-0 z-20 bg-white/50 backdrop-blur-md">
-          {/* desktop
-          <h2>Home</h2>
-          */}
-          <div className="flex justify-between text-sm border-b-2 border-black/5">
-            <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-900/10" onClick={() => setActiveFeed(false)}>
-              <div className="flex flex-col items-center">
-                <div className="h-1"></div>
-                <p className={`py-3 ${activeFeed ? 'text-black/70' : 'font-bold'}`}>For you</p>
-                <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? 'invisible' : ''}`}></div>
-              </div>
-            </button>
-            <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-900/10" onClick={() => setActiveFeed(true)}>
-              <div className="flex flex-col items-center">
-                <div className="h-1"></div>
-                <p className={`py-3 ${activeFeed ? 'font-bold' : 'text-black/70'}`}>Following</p>
-                <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? '' : 'invisible'}`}></div>
-              </div>
-            </button>
-          </div>
-        </div>
-        {/* desktop
-        <div>
-          <img src="/" alt="Profile picture" />
-          <div>
-            <textarea name="What is happening?" />
-            <div>
-              <span><img src="/" alt="Media" /></span>
-              <span><img src="/" alt="Gif" /></span>
-              <span><img src="/" alt="Poll" /></span>
-              <button>Tweet</button>
-            </div>
-          </div>
-        </div>
-        */}
-        <button className="w-screen py-3.5 text-sm duration-300 border-b-2 text-violet-600 border-neutral-100 hover:bg-neutral-100">
-          <p>Show 150 Tweets</p>
-        </button>
-
-        <article className="flex gap-3 px-4 py-3 duration-300 border cursor-pointer hover:bg-neutral-100 border-b-neutral-200">
-          <div>
-            <span className="inline-block w-10 h-10 duration-300 hover:brightness-90">
-              <img className="h-full rounded-full" src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
-            </span>
-          </div>
-
-          <div className="relative flex flex-col">
-            <div className="flex items-center justify-between pb-1 text-sm">
-
-              <p className="mr-6 break-all">
-                <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2">
-                  Name Here
-                </strong>
-                <span className="mr-1 text-neutral-500">@username.here ∙</span>
-                <span className="text-neutral-500">14m</span>
-              </p>
-              
-              <div className="absolute -right-2">
-                <span title="More" className="flex items-center justify-center font-bold tracking-widest duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
-                  ∙∙∙
-                </span>
-              </div>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla in dicta reiciendis tenetur, dolore aliquid dolores sint officiis, nisi esse officia perferendis. Numquam totam sint a ab dolorem harum ipsam?</p>
-            </div>
-            <aside className="flex flex-wrap justify-between h-8 text-neutral-500">
-              <button title="Reply" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>7</span>
-              </button>
-              <button title="Retweet" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>3</span>
-              </button>
-              <button title="Like" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>14</span>
-              </button>
-              <button title="View" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>141</span>
-              </button>
-              <button title="Share" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" />
-              </button>
-            </aside>
-          </div>
-        </article>
-
-        <article className="flex gap-3 px-4 py-3 duration-300 border cursor-pointer hover:bg-neutral-100 border-b-neutral-200">
-          <div>
-            <span className="inline-block w-10 h-10 duration-300 hover:brightness-90">
-              <img className="h-full rounded-full" src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
-            </span>
-          </div>
-
-          <div className="relative flex flex-col">
-            <div className="flex items-center justify-between pb-1 text-sm">
-
-              <p className="mr-6 break-all">
-                <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2">
-                  Name Here
-                </strong>
-                <span className="mr-1 text-neutral-500">@username.here ∙</span>
-                <span className="text-neutral-500">14m</span>
-              </p>
-              
-              <div className="absolute -right-2">
-                <span title="More" className="flex items-center justify-center font-bold tracking-widest duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
-                  ∙∙∙
-                </span>
-              </div>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla in dicta reiciendis tenetur, dolore aliquid dolores sint officiis, nisi esse officia perferendis. Numquam totam sint a ab dolorem harum ipsam?</p>
-            </div>
-            <aside className="flex flex-wrap justify-between h-8 text-neutral-500">
-              <button title="Reply" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>7</span>
-              </button>
-              <button title="Retweet" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>3</span>
-              </button>
-              <button title="Like" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>14</span>
-              </button>
-              <button title="View" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>141</span>
-              </button>
-              <button title="Share" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" />
-              </button>
-            </aside>
-          </div>
-        </article>
-
-        <article className="flex gap-3 px-4 py-3 duration-300 border cursor-pointer hover:bg-neutral-100 border-b-neutral-200">
-          <div>
-            <span className="inline-block w-10 h-10 duration-300 hover:brightness-90">
-              <img className="h-full rounded-full" src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
-            </span>
-          </div>
-
-          <div className="relative flex flex-col">
-            <div className="flex items-center justify-between pb-1 text-sm">
-
-              <p className="mr-6 break-all">
-                <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2">
-                  Name Here
-                </strong>
-                <span className="mr-1 text-neutral-500">@username.here ∙</span>
-                <span className="text-neutral-500">14m</span>
-              </p>
-              
-              <div className="absolute -right-2">
-                <span title="More" className="flex items-center justify-center font-bold tracking-widest duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
-                  ∙∙∙
-                </span>
-              </div>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla in dicta reiciendis tenetur, dolore aliquid dolores sint officiis, nisi esse officia perferendis. Numquam totam sint a ab dolorem harum ipsam?</p>
-            </div>
-            <aside className="flex flex-wrap justify-between h-8 text-neutral-500">
-              <button title="Reply" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>7</span>
-              </button>
-              <button title="Retweet" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>3</span>
-              </button>
-              <button title="Like" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>14</span>
-              </button>
-              <button title="View" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>141</span>
-              </button>
-              <button title="Share" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" />
-              </button>
-            </aside>
-          </div>
-        </article>
-
-        <article className="flex gap-3 px-4 py-3 duration-300 border cursor-pointer hover:bg-neutral-100 border-b-neutral-200">
-          <div>
-            <span className="inline-block w-10 h-10 duration-300 hover:brightness-90">
-              <img className="h-full rounded-full" src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
-            </span>
-          </div>
-
-          <div className="relative flex flex-col">
-            <div className="flex items-center justify-between pb-1 text-sm">
-
-              <p className="mr-6 break-all">
-                <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2">
-                  Name Here
-                </strong>
-                <span className="mr-1 text-neutral-500">@username.here ∙</span>
-                <span className="text-neutral-500">14m</span>
-              </p>
-              
-              <div className="absolute -right-2">
-                <span title="More" className="flex items-center justify-center font-bold tracking-widest duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
-                  ∙∙∙
-                </span>
-              </div>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla in dicta reiciendis tenetur, dolore aliquid dolores sint officiis, nisi esse officia perferendis. Numquam totam sint a ab dolorem harum ipsam?</p>
-            </div>
-            <aside className="flex flex-wrap justify-between h-8 text-neutral-500">
-              <button title="Reply" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>7</span>
-              </button>
-              <button title="Retweet" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>3</span>
-              </button>
-              <button title="Like" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>14</span>
-              </button>
-              <button title="View" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" /><span>141</span>
-              </button>
-              <button title="Share" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
-                <img src="/" alt="x" />
-              </button>
-            </aside>
-          </div>
-        </article>
-      </main>
+      <Timeline />
     </div>
   )
 }
