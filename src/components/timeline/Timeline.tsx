@@ -21,18 +21,18 @@ export function Timeline() {
         {/* desktop
         <h2>Home</h2>
         */}
-        <div className="flex justify-between text-sm border-b-2 border-black/5">
+        <div className="flex justify-between border-b-2 border-neutral-100">
           <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-600/10" onClick={() => setActiveFeed(false)}>
             <div className="flex flex-col items-center">
               <div className="h-1"></div>
-              <p className={`py-3 ${activeFeed ? 'text-black/70' : 'font-bold'}`}>For you</p>
+              <p className={`py-3 ${activeFeed ? 'text-neutral-600' : 'font-bold'}`}>For you</p>
               <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? 'invisible' : ''}`}></div>
             </div>
           </button>
           <button className="flex justify-center w-0 duration-200 grow hover:bg-neutral-600/10" onClick={() => setActiveFeed(true)}>
             <div className="flex flex-col items-center">
               <div className="h-1"></div>
-              <p className={`py-3 ${activeFeed ? 'font-bold' : 'text-black/70'}`}>Following</p>
+              <p className={`py-3 ${!activeFeed ? 'text-black/70' : 'font-bold'}`}>Following</p>
               <div className={`h-1 w-[106%] bg-violet-600 rounded-full ${activeFeed ? '' : 'invisible'}`}></div>
             </div>
           </button>
@@ -52,7 +52,7 @@ export function Timeline() {
         </div>
       </div>
       */}
-      <button className="w-screen py-3.5 text-sm duration-300 border-b-2 text-violet-600 border-neutral-100 hover:bg-neutral-100">
+      <button className="w-screen py-3.5 text-sm duration-300 border-b-2 text-violet-500 border-neutral-100 hover:bg-neutral-100">
         <p>Show 150 Tweets</p>
       </button>
 

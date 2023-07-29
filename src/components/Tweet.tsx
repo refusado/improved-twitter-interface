@@ -27,26 +27,27 @@ export function Tweet(tweet: ITweetData) {
         </span>
       </div>
 
-      <div className="relative flex flex-col">
-        <div className="flex items-center justify-between pb-1 text-sm">
+      <div className="relative flex flex-col leading-4">
+        <div className="flex items-center justify-between pb-1 text-[0.9375rem]">
           <p className="mr-6 break-all">
-            <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2">
+            <strong className="mr-1 text-neutral-800 hover:underline underline-offset-2 font-extrabold">
               {name}
             </strong>
-            <span className="mr-1 text-neutral-500">{user} ∙</span>
+            <span className="mr-1 text-neutral-500">{user}</span>
+            <span className="mr-1 text-neutral-500">∙</span>
             <span className="text-neutral-500">{time}</span>
           </p>
           
           <div className="absolute -right-2">
-            <span title="More" className="flex items-center justify-center font-bold tracking-widest duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
+            <span title="More" className="flex items-center justify-center font-extrabold text-lg tracking-wide duration-300 rounded-full w-9 h-9 text-neutral-500 hover:text-violet-600 hover:bg-violet-300/30">
               ∙∙∙
             </span>
           </div>
         </div>
-        <div>
-          <p>{tweet.content}</p>
+        <div className="pr-1">
+          <p className="leading-5">{tweet.content}</p>
         </div>
-        <aside className="flex flex-wrap justify-between h-8 text-neutral-500">
+        <aside className="flex flex-wrap justify-between h-8 text-neutral-500 text-xs">
           <button title="Reply" className="flex items-center justify-center px-2 duration-300 hover:brightness-110 hover:text-neutral-900">
             <img src="/" alt="x" /><span>{tweet.stats.replys}</span>
           </button>

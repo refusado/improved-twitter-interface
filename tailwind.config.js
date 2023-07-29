@@ -1,10 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{ts,tsx}"
   ],
   theme: {
+    fontFamily: {
+      // 'sans': ['"Open Sans"', ...defaultTheme.fontFamily.sans]
+      'sans': ['Lato']
+    },
     extend: {
       animation: {
         'to-right': 'to-right 300ms ease forwards',

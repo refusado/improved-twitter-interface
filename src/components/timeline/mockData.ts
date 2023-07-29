@@ -63,11 +63,11 @@ export const tweetsData: ITweetData[] = [
   },
   {
     "id": 4,
-    "content": "Sextou! Hora de relaxar e curtir o final de semana! 🎉🍹 #TGIF",
+    "content": "Não foi engano, foi projeto ooooo “agentes de inteligência e dentro do próprio Palácio […] citam o distanciamento social e a vacinação como formas efetivas de controlar a doença […] desaconselham o uso da cloroquina e alertam sobre possibilidade de colapso”",
     "time": 22,
     "author": {
-      "name": "Rafael Pereira",
-      "userName": "rafael_pereira"
+      "name": "Atila Iamarino",
+      "userName": "oatila"
     },
     "stats": {
       "replys": 3,
