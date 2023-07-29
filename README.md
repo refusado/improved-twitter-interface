@@ -19,7 +19,7 @@ This is a study project where I am recreating an improved version of the Twitter
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/improved-twitter-interface.git
+   git clone https://github.com/refusado/improved-twitter-interface.git
    cd improved-twitter-interface
    ```
 
