@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import X from './assets/X.svg';
+import X from '/x.svg';
 import { Timeline } from './components/timeline/Timeline';
 
 function App() {
