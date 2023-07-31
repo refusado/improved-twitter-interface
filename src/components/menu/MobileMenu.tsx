@@ -6,6 +6,8 @@ export interface MobileMenuProps {
 }
 
 export function MobileMenu({ closingMobileMenu, toggleMobileMenu }: MobileMenuProps) {
+  const navbarElements = getNavElements();
+
   return (
     <div className={`fixed top-0 right-0 left-0 bottom-0 z-50 ${closingMobileMenu ? 'animate-menu-out' : 'animate-menu-in'}`}>
       <button onClick={toggleMobileMenu} className="absolute w-screen h-screen"></button>
@@ -38,48 +40,7 @@ export function MobileMenu({ closingMobileMenu, toggleMobileMenu }: MobileMenuPr
         </div>
 
         <nav className="text-xl font-bold tracking-wide bg-white">
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Profile" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Profile</p>
-            <div className="invisible w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Thitter Blue" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Blue</p>
-            <div className="invisible w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Lists" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Lists</p>
-            <div className="w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Bookmarks" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Bookmarks</p>
-            <div className="invisible w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Communities" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Communities</p>
-            <div className="w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
-          <a href="/" className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-            <span className="overflow-hidden w-7 h-7">
-              <img src="/" alt="Monetization" />
-            </span>
-            <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">Monetization</p>
-            <div className="invisible w-2 h-2 m-2 rounded-full bg-violet-500"></div>
-          </a>
+          {navbarElements}
         </nav>
 
         <div className="bg-white">
@@ -164,4 +125,64 @@ export function MobileMenu({ closingMobileMenu, toggleMobileMenu }: MobileMenuPr
       </menu>
     </div>
   );
+}
+  
+function getNavElements() {
+  interface NavbarItem {
+    redirect: string,
+    name: string,
+    iconSrc: string,
+    notification: boolean
+  };
+
+  const navbarData: NavbarItem[] = [
+    {
+      redirect: '/',
+      name: 'Profile',
+      iconSrc: '/',
+      notification: false
+    },
+    {
+      redirect: '/',
+      name: 'Blue',
+      iconSrc: '/',
+      notification: false
+    },
+    {
+      redirect: '/',
+      name: 'Lists',
+      iconSrc: '/',
+      notification: true
+    },
+    {
+      redirect: '/',
+      name: 'Bookmarks',
+      iconSrc: '/',
+      notification: false
+    },
+    {
+      redirect: '/',
+      name: 'Communities',
+      iconSrc: '/',
+      notification: true
+    },
+    {
+      redirect: '/',
+      name: 'Monetization',
+      iconSrc: '/',
+      notification: false
+    },
+  ]
+
+  return navbarData.map(({ redirect, name, iconSrc, notification }: NavbarItem) => {
+    return (
+      <a href={redirect} className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
+        <span className="overflow-hidden w-7 h-7">
+          <img src={iconSrc} alt={name} />
+        </span>
+        <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">{name}</p>
+        <div className={`${notification ? '' : 'invisible'} w-2 h-2 m-2 rounded-full bg-violet-500`}></div>
+      </a>
+    );
+  });
 }
