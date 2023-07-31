@@ -2,6 +2,7 @@ import { useState } from 'react';
 import X from '/x.svg';
 import { Timeline } from './components/timeline/Timeline';
 import { Menu } from './components/menu/Menu';
+import { Feather, Plus, House, MagnifyingGlass, Bell, EnvelopeSimple } from '@phosphor-icons/react';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen]: [Boolean, Function] = useState(false);
@@ -43,23 +44,32 @@ function App() {
       </header>
 
       <button className="fixed right-0 z-30 block mb-5 mr-5 bottom-14 group">
-        <span className="flex items-center justify-center text-white duration-300 border rounded-full shadow-md bg-violet-500 border-violet-600 w-14 h-14 shadow-neutral-600/30 group-hover:bg-violet-700">
-          <img src="/" alt="Tweet" />
+        <span className="flex items-center justify-center p-3 text-white duration-300 border rounded-full shadow-md bg-violet-500 w-14 h-14 shadow-neutral-600/30 group-hover:brightness-90">
+          <Feather className="w-full h-full mt-1 ml-1.5 bg-yellow-500a" />
+          <Plus className="absolute w-3.5 h-3.5 rounded-full bottom-1/2 right-1/2" weight="bold" />
         </span>
       </button>
 
       <nav className="fixed bottom-0 z-30 flex w-screen bg-white border-t-2 shadow shadow-black/30 border-neutral-100">
         <a className="flex items-center justify-center h-[52px] grow group" href="/">
-          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200">
+            <House className="text-black w-7 h-7" weight={true ? 'fill' : 'regular'} />
+          </span>
         </a>
         <a className="flex items-center justify-center h-[52px] grow group" href="/">
-          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200">
+            <MagnifyingGlass className="text-black w-7 h-7" weight={false ? 'bold' : 'regular'} />
+          </span>
         </a>
         <a className="flex items-center justify-center h-[52px] grow group" href="/">
-          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200">
+            <Bell className="text-black w-7 h-7" weight={false ? 'fill' : 'regular'} />
+          </span>
         </a>
         <a className="flex items-center justify-center h-[52px] grow group" href="/">
-          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200"><img src="/" alt="X" /></span>
+          <span className="flex items-center justify-center w-10 h-10 duration-300 rounded-full group-hover:bg-neutral-200">
+            <EnvelopeSimple className="text-black w-7 h-7" weight={false ? 'bold' : 'regular'} />
+          </span>
         </a>
       </nav>
 
