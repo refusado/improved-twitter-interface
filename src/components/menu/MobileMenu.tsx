@@ -1,4 +1,5 @@
-import { MouseEventHandler } from 'react';
+import { Article, BookmarkSimple, Money, Plus, SealCheck, User, Users, X } from '@phosphor-icons/react';
+import { MouseEventHandler, ReactElement } from 'react';
 
 export interface MobileMenuProps {
   closingMobileMenu: Boolean,
@@ -14,8 +15,8 @@ export function MobileMenu({ closingMobileMenu, toggleMobileMenu }: MobileMenuPr
       <menu className={`bg-white h-screen overflow-scroll pb-12 w-[280px] max-w-full ${closingMobileMenu ? 'animate-to-left' : 'animate-to-right'}`}>
         <div className="sticky top-0 flex items-center justify-between px-3.5 py-2 bg-white">
           <p><strong>Account info</strong></p>
-          <button onClick={toggleMobileMenu} className="flex items-center justify-center text-2xl duration-200 bg-white rounded-full w-9 h-9 hover:bg-neutral-200">
-            ×
+          <button onClick={toggleMobileMenu} className="flex items-center justify-center text-2xl duration-200 bg-white rounded-full w-9 h-9 hover:bg-neutral-200 p-2">
+            <X weight="bold" />
           </button>
         </div>
         <div className="px-3.5 py-3">
@@ -23,8 +24,8 @@ export function MobileMenu({ closingMobileMenu, toggleMobileMenu }: MobileMenuPr
             <button className="flex items-center justify-center overflow-hidden duration-150 rounded-full w-11 aspect-square hover:brightness-90">
               <img src="https://avatars.githubusercontent.com/u/89546855?v=4" alt="Avatar" />
             </button>
-            <button className="flex items-center justify-center w-8 h-8 ml-auto text-xl duration-100 bg-white border rounded-full hover:brightness-95 border-neutral-200">
-              +
+            <button className="flex items-center justify-center w-8 h-8 ml-auto text-xl duration-100 bg-white border rounded-full hover:brightness-95 border-neutral-300 p-1">
+              <Plus />
             </button>
           </div>
           <a href="/" className="inline-block my-3 leading-3">
@@ -131,7 +132,7 @@ function getNavElements() {
   interface NavbarItem {
     redirect: string,
     name: string,
-    iconSrc: string,
+    icon: ReactElement,
     notification: boolean
   };
 
@@ -139,47 +140,45 @@ function getNavElements() {
     {
       redirect: '/',
       name: 'Profile',
-      iconSrc: '/',
+      icon: <User className="w-full h-full" weight="bold" />,
       notification: false
     },
     {
       redirect: '/',
       name: 'Blue',
-      iconSrc: '/',
+      icon: <SealCheck className="w-full h-full" weight="bold" />,
       notification: false
     },
     {
       redirect: '/',
       name: 'Lists',
-      iconSrc: '/',
+      icon: <Article className="w-full h-full" weight="bold" />,
       notification: true
     },
     {
       redirect: '/',
       name: 'Bookmarks',
-      iconSrc: '/',
+      icon: <BookmarkSimple className="w-full h-full" weight="bold" />,
       notification: false
     },
     {
       redirect: '/',
       name: 'Communities',
-      iconSrc: '/',
+      icon: <Users className="w-full h-full" weight="bold" />,
       notification: true
     },
     {
       redirect: '/',
       name: 'Monetization',
-      iconSrc: '/',
+      icon: <Money className="w-full h-full" weight="bold" />,
       notification: false
     },
   ]
 
-  return navbarData.map(({ redirect, name, iconSrc, notification }: NavbarItem) => {
+  return navbarData.map(({ redirect, name, icon, notification }: NavbarItem, index) => {
     return (
-      <a href={redirect} className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10">
-        <span className="overflow-hidden w-7 h-7">
-          <img src={iconSrc} alt={name} />
-        </span>
+      <a href={redirect} className="flex items-center px-3.5 py-3.5 duration-200 bg-white hover:bg-neutral-400/10" key={index}>
+        <span className="overflow-hidden w-7 h-7 bg-red-300a">{icon}</span>
         <p className="w-5/6 ml-6 overflow-hidden grow text-ellipsis">{name}</p>
         <div className={`${notification ? '' : 'invisible'} w-2 h-2 m-2 rounded-full bg-violet-500`}></div>
       </a>
